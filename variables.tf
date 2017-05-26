@@ -1,9 +1,16 @@
+variable "filename" {
+  description = "The path to the function's deployment package within the local filesystem. If defined, The s3_-prefixed options cannot be used. The source_code_hash will be automatically added."
+  default     = ""
+}
+
 variable "s3_bucket" {
   description = "The name of the bucket containing your uploaded lambda deployment package."
+  default     = ""
 }
 
 variable "s3_key" {
   description = "The s3 key for your Lambda deployment package."
+  default     = ""
 }
 
 variable "function_name" {

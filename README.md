@@ -4,8 +4,9 @@ This module will deploy a lambda function and a cron rule to run the lambda func
 
 ## Module Input Variables
 
-- `s3_bucket` - (string) - **REQUIRED** - The name of the bucket containing your uploaded lambda deployment package
-- `s3_key` - (string) - **REQUIRED** - The s3 key for your Lambda deployment package
+- `filename` - (string) - **OPTIONAL** - The path to the function's deployment package within the local filesystem. If defined, The `s3_`-prefixed options cannot be used. The `source_code_hash` will be automatically added.
+- `s3_bucket` - (string) - **OPTIONAL** - The name of the bucket containing your uploaded lambda deployment package
+- `s3_key` - (string) - **OPTIONAL** - The s3 key for your Lambda deployment package
 - `function_name` - (string) - **REQUIRED** - The name of the lambda function
 - `handler` - (map) - **REQUIRED** - The function within your code that Lambda calls to begin execution.
 - `runtime` - (string) - **REQUIRED** The runtime environment for the Lambda function you are uploading.
